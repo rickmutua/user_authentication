@@ -73,5 +73,54 @@ def main():
 
             print('\n')
 
-            print(f"New Credential {account_name} {account_password} {account_email}")
-            
+            print(f"New Credential {account_name} {account_password} {account_email} created")
+
+            print('\n')
+
+        elif short_code == 'dc':
+
+            if display_credentials():
+
+                print("Here is a list of all your credentials")
+
+                print('\n')
+
+                for credential in display_credentials():
+
+                    print(f"{credential.account_name} {credential.account_password} {credential.account_email}")
+
+                    print('\n')
+
+                else:
+                    print('\n')
+
+                    print("You dont seem to have any saved credentials")
+
+                    print('\n')
+
+            elif short_code == 'fc':
+
+                print("Enter the account name you want to search for")
+
+                search_account_name = input()
+
+                if check_existing_credentials(search_account_name):
+
+                    search_account_name = find_credential(search_account_name)
+
+                    print(f"{search_account_name.account_name}")
+
+                    print('-' * 20)
+
+                    print(f"{search_account_name.account_password} {search_account_name.account_email}")
+
+                else:
+                    print("That credential doesn't exist")
+
+            elif short_code = 'ex':
+                print("GoodBye")
+
+                break
+
+            else:
+                print("I didn't get that. Please use the short codes")
