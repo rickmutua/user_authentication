@@ -45,7 +45,6 @@ def display_credentials():
 
 
 def main():
-    print("Hello, Welcome to your password locker")
-
-
+    print("Hello, Welcome to your password locker, please login")
+    user_name = input()
 
