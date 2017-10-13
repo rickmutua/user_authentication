@@ -35,10 +35,17 @@ class Credential:
         return cls.credential_list
 
     @classmethod
-    def copy_credential(cls, credential):
+    def find_by_account_name(cls, account_name):
+        for credential in cls.credential_list:
+            if credential.account_name == account_name:
+                return credential
+        return False
 
-        credential_found = Credential.find_by_credentials(credential)
-
-        pyperclip.copy(credential_found.account_password)
+    # @classmethod
+    # def copy_credential(cls, account_name):
+    #
+    #     credential_found = Credential.find_by_account_name(account_name)
+    #
+    #     pyperclip.copy(credential_found.credential)
 
 

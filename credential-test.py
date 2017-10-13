@@ -49,12 +49,12 @@ class TestCredential(unittest.TestCase):
 
         self.assertEqual(Credential.display_credentials(), Credential.credential_list)
 
-    def test_copy_account_password(self):
-
-        self.new_credential.save_credential()
-        Credential.copy_account_password("Erick1234")
-
-        self.assertEqual(self.new_credential.account_password,pyperclip.paste())
+    # def test_copy_credential(self,):
+    #
+    #     self.new_credential.save_credential()
+    #     Credential.copy_credential("Facebook")
+    #
+    #     self.assertEqual(self.new_credential.credential,pyperclip.paste())
 
 
 
