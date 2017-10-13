@@ -1,15 +1,22 @@
 import sys
 
+
 class User:
-    '''
-    class that generates new instances of user authentication
-    '''
+
+    user_list = []  # empty user list
 
     def __init__(self, user_name, user_password):
-        '''
-        method that helps us define properties for our objects
-        :param user_name:
-        :param user_password:
-        '''
+
+        self.user_name = user_name
+        self.user_password = user_password
+
+    def save_user(self):
+
+        User.user_list.append(self)
+
+
+
+
+
 
 
