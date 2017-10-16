@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3.6
 
 from user import User
 
@@ -46,9 +46,15 @@ def display_credentials():
 
 def main():
     print("Hello, Welcome to your password locker, please login")
+    print('\n')
+    print("User Name . . . .")
     user_name = input()
+
+    print('\n')
+    print("User Password . . . .")
     user_password = input()
 
+    print('\n')
     if user_name == user_name and user_password == user_password:
         print(f"Hello {user_name}. What would you like to do?")
         print('\n')
@@ -130,3 +136,9 @@ def main():
 
     else:
         print("No such user account found.")
+
+
+
+if __name__ == '__main__':
+
+    main()
