@@ -5,6 +5,12 @@ from user import User
 from credential import Credential
 
 
+def user_exists(cls, user_name, user_password):
+    for user in cls.user_list:
+        if (user.user_name == user_name) and (user.user_password == user_password):
+            return True
+        return False
+
 def create_user(user_name, user_password):
 
     new_user = User(user_name, user_password)
@@ -55,7 +61,7 @@ def main():
     user_password = input()
 
     print('\n')
-    if user_name == user_name and user_password == user_password:
+    if user_name == user_name and user_password != user_password:
         print(f"Hello {user_name}. What would you like to do?")
         print('\n')
 
@@ -134,8 +140,8 @@ def main():
                 print("I didn't get that. Please use the short codes")
 
 
-    else:
-        print("No such user account found.")
+        # else:
+        #      print("No such user account found.")
 
 
 

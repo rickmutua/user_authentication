@@ -23,6 +23,11 @@ class User:
 
          return False
 
+    # @classmethod
+    # def user_not_exist(cls, user_name, user_password):
+    #
+    #     for
+
 
 
 

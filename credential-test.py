@@ -45,16 +45,40 @@ class TestCredential(unittest.TestCase):
 
         self.assertTrue(credential_exists)
 
+    def test_delete_credential(self):
+
+        self.new_credential.save_credential()
+        test_credential = Credential("Test", "user", "test@user.com")
+
+        test_credential.save_credential()
+        self.new_credential.delete_credential()
+        self.assertEqual(len(Credential.credential_list))
+
     def test_display_all_credentials(self):
 
         self.assertEqual(Credential.display_credentials(), Credential.credential_list)
 
-    # def test_copy_credential(self,):
-    #
-    #     self.new_credential.save_credential()
-    #     Credential.copy_credential("Facebook")
-    #
-    #     self.assertEqual(self.new_credential.credential,pyperclip.paste())
+    def test_credential_exists(self):
+        self.new_credential.save_credential()
+
+        test_credential = Credential("Test", "user", "test@user.com")
+
+        test_credential.save_credential()
+
+        found_credential = Credential.find_by_account_name(test_credential.account_name)
+        self.assertEqual(found_credential.account.password, test_credential.account_password)
+
+    def test_copy_credential(self,):
+
+        self.new_credential.save_credential()
+        Credential.copy_credential("Facebook")
+
+        self.assertEqual(self.new_credential.credential,pyperclip.paste())
+
+    def test_password_autogeneration(self):
+
+        password_autogeneration = self.new_credential.password_autogeneration()
+        self.assertEqual(len(password_autogeneration), 8)
 
 
 
