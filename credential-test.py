@@ -1,5 +1,5 @@
 import unittest
-import pyperclip
+# import pyperclip
 
 from credential import Credential
 
@@ -58,27 +58,27 @@ class TestCredential(unittest.TestCase):
 
         self.assertEqual(Credential.display_credentials(), Credential.credential_list)
 
-    def test_credential_exists(self):
-        self.new_credential.save_credential()
+    # def test_credential_exists(self):
+    #     self.new_credential.save_credential()
+    #
+    #     test_credential = Credential("Test", "user", "test@user.com")
+    #
+    #     test_credential.save_credential()
+    #
+    #     found_credential = Credential.find_by_account_name(test_credential.account_name)
+    #     self.assertEqual(found_credential.account.password, test_credential.account_password)
 
-        test_credential = Credential("Test", "user", "test@user.com")
-
-        test_credential.save_credential()
-
-        found_credential = Credential.find_by_account_name(test_credential.account_name)
-        self.assertEqual(found_credential.account.password, test_credential.account_password)
-
-    def test_copy_credential(self,):
-
-        self.new_credential.save_credential()
-        Credential.copy_credential("Facebook")
-
-        self.assertEqual(self.new_credential.credential,pyperclip.paste())
-
-    def test_password_autogeneration(self):
-
-        password_autogeneration = self.new_credential.password_autogeneration()
-        self.assertEqual(len(password_autogeneration), 8)
+    # def test_copy_credential(self,):
+    #
+    #     self.new_credential.save_credential()
+    #     Credential.copy_credential("Facebook")
+    #
+    #     self.assertEqual(self.new_credential.credential,pyperclip.paste())
+    #
+    # def test_auto_generate_password(self):
+    #
+    #     auto_generate_password = self.new_credential.password_autogeneration()
+    #     self.assertEqual(len(auto_generate_password), 8)
 
 
 

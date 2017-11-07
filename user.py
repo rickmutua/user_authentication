@@ -1,4 +1,5 @@
 import sys
+from credential import Credential
 
 
 class User:
@@ -19,9 +20,13 @@ class User:
 
          for user in cls.user_list:
              if (user.user_name == user_name) and (user.user_password == user_password):
-                 return True
+                 return Credential.credential_list
 
          return False
+
+    # def delete_user(self):
+    #
+    #     User.delete_user(self)
 
     # @classmethod
     # def user_not_exist(cls, user_name, user_password):
